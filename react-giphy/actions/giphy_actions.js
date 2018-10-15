@@ -16,3 +16,13 @@ export const receiveTrendingGiphys = giphys => {
     giphys
   }
 }
+
+export const fetchSearchGiphys = (searchTerm) => dispatch => {
+  return APIUtil.fetchSearchGiphys(searchTerm)
+    .then(giphys => dispatch(receiveSearchGiphys(giphys.data)))
+};
+
+export const fetchTrendingGipys = () => dispatch => {
+  return APIUtil.fetchTrendingGiphys()
+    .then(giphys => dispatch(receiveTrendingGiphys(giphys.data)))
+};
