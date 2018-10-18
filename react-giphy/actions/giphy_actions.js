@@ -22,7 +22,7 @@ export const fetchSearchGiphys = (searchTerm) => dispatch => {
     .then(giphys => dispatch(receiveSearchGiphys(giphys.data)))
 };
 
-export const fetchTrendingGipys = () => dispatch => {
+export const fetchTrendingGiphys = () => dispatch => {
   return APIUtil.fetchTrendingGiphys()
     .then(giphys => dispatch(receiveTrendingGiphys(giphys.data)))
 };
