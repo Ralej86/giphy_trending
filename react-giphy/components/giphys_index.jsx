@@ -18,7 +18,7 @@ class GiphysIndex extends React.Component {
       return (
         <ul>
           { this.props.giphys.map(giphy =>
-            <GiphysIndexItem key={giphy.id} giphy={giphy} /> )}
+            <GiphysIndexItem key={giphy.id} giphy={giphy} onClick/> )}
             </ul>
           )
     }
