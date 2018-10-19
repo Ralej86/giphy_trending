@@ -11,7 +11,6 @@ const App = () => (
 
     <Switch>
       <Route exact path="/" component={ GiphysIndexContainer }/>
-      <Route exact path="/giphy/:" component={ GiphyDetailContainer } />
     </Switch>
   </div>
 );

@@ -9,7 +9,7 @@ class GiphysIndex extends React.Component {
     }
   }
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.giphys.length === 0 ) {
       return (
         <div> Loading... </div>
