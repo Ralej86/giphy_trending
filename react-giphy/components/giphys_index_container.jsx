@@ -4,7 +4,7 @@ import GiphysIndex from './giphys_index';
 import { fetchTrendingGiphys } from '../actions/giphy_actions';
 
 const mapStateToProps = state => ({
-  giphys: state.giphys
+  giphys: Object.values(state.giphys)
 });
 
 const mapDispatchToProps = dispatch => ({
