@@ -1,6 +1,7 @@
 import React from 'react';
 
 import GiphysIndexItem from './giphys_index_item';
+import GiphysSearch from './giphys_search';
 
 class GiphysIndex extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class GiphysIndex extends React.Component {
 
     this.loadMoreGiphys = this.loadMoreGiphys.bind(this);
   }
+
   componentDidMount() {
     window.addEventListener('scroll',this.loadMoreGiphys);
     if (this.props.fetchTrendingGiphys) {
@@ -15,30 +17,38 @@ class GiphysIndex extends React.Component {
     }
   }
 
-
   componentWillUnmount() {
     window.removeEventListener('scroll', this.loadMoreGiphys);
   }
 
   loadMoreGiphys() {
-    console.log(window.innerHeight);
-    console.log(window.scrollY);
-    console.log(document.body.offsetHeight);
+    const currentPosition = window.innerHeight + window.scrollY;
+    if (currentPosition >= document.body.offsetHeight - 100) {
+      this.props.fetchTrendingGiphys();
+    }
   }
 
   render() {
     if (this.props.giphys.length === 0 ) {
       return (
-        <div> Loading... </div>
+        <div>
+          <GiphysSearch fetchSearchGiphys={this.props.fetchSearchGiphys} />
+
+          <div> Loading... </div>
+        </div>
       )
     } else {
       return (
-        <ul>
-          { this.props.giphys.map(giphy =>
-            <GiphysIndexItem key={giphy.id} giphy={giphy} onClick/> )}
-            </ul>
-          )
-    }
+        <div>
+          <GiphysSearch fetchSearchGiphys={this.props.fetchSearchGiphys} />
+
+          <ul>
+            { this.props.giphys.map(giphy =>
+              <GiphysIndexItem key={giphy.id} giphy={giphy} onClick/> )}
+              </ul>
+          </div>
+        )
+      }
   }
 }
 
