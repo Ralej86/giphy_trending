@@ -9,10 +9,18 @@ class GiphysIndexItem extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    if (e.target.parentNode.children[1].style.display === 'none') {
-      e.target.parentNode.children[1].style.display = 'inline-block';
+    const target = e.target;
+    const targetDiv = target.parentNode.children[1];
+    const targetHeight = target.offsetHeight + target.offsetTop + 5;
+    const targetLeft = target.offsetLeft + 10;
+    if (targetDiv.style.display === 'none') {
+      targetDiv.setAttribute("style",
+      `display: inline-block;
+      position: absolute;
+      top: ${targetHeight}px;
+      left: ${targetLeft}px`);
     } else {
-      e.target.parentNode.children[1].style.display = 'none';
+      targetDiv.style.display = 'none';
     }
   }
 
@@ -32,8 +40,8 @@ class GiphysIndexItem extends React.Component {
     }
 
     return (
-      <li className="giphy-li" onClick={this.handleClick} >
-        <img src={this.props.giphy.images.fixed_height.url} />
+      <li className="giphy-li">
+        <img src={this.props.giphy.images.fixed_height.url} onClick={this.handleClick}/>
         <div className="giphy-detail" style={{display: "none"}}>
           <ul>
             <li>Title: {this.props.giphy.title}</li>
@@ -47,6 +55,3 @@ class GiphysIndexItem extends React.Component {
 }
 
 export default GiphysIndexItem;
-
-
-//         <img src={giphy.images.fixed_height.url} />

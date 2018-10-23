@@ -1,3 +1,4 @@
+// import { merge } from 'lodash';
 import { RECEIVE_SEARCH_GIPHYS, RECEIVE_TRENDING_GIPHYS } from '../actions/giphy_actions';
 
 const giphysReducer = (state = [], action) => {
@@ -12,3 +13,5 @@ const giphysReducer = (state = [], action) => {
 };
 
 export default giphysReducer;
+      // return merge({}, state, action.giphys);
+      // return merge({}, state, action.giphys)
