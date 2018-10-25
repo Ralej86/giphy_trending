@@ -1,5 +1,6 @@
 body {
   margin: 30px;
+  background-color: #1f1e1e;
 }
 
 ul {
@@ -16,13 +17,20 @@ img {
   border-radius: 5px;
 }
 
-.search-bar {
-  padding-bottom: 15px;
+.search-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 input {
-  width: 200px;
-  height: 21px;
+  width: 75%;
+  height: 30px;
   font-size: 15px;
   font-family: 'Helvetica';
   margin-right: 2px;
@@ -34,4 +42,18 @@ button {
   padding: 6px;
   border: none;
   font-size: 10px;
+}
+
+
+.giphy-content {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.giphy-detail {
+  background-color: ghostwhite;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 3px;
 }

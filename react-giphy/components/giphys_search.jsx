@@ -20,9 +20,9 @@ class GiphysSearch extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='search-div'>
         <form className="search">
-          <input type='text' value={this.state.searchTerm} onChange={this.handleChange} />
+          <input type='text' placeholder="What are you looking for?" value={this.state.searchTerm} onChange={this.handleChange} />
           <button type="submit" onClick={this.handleSubmit}>Search</button>
         </form>
       </div>

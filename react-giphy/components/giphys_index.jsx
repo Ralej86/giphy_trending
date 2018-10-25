@@ -31,7 +31,7 @@ class GiphysIndex extends React.Component {
   render() {
     if (this.props.giphys.length === 0 ) {
       return (
-        <div>
+        <div className="main">
           <GiphysSearch fetchSearchGiphys={this.props.fetchSearchGiphys} />
 
           <div> Loading... </div>
@@ -39,10 +39,10 @@ class GiphysIndex extends React.Component {
       )
     } else {
       return (
-        <div>
+        <div className="main">
           <GiphysSearch fetchSearchGiphys={this.props.fetchSearchGiphys} />
 
-          <ul>
+          <ul className="giphy-content">
             { this.props.giphys.map(giphy =>
               <GiphysIndexItem key={giphy.id} giphy={giphy} onClick/> )}
               </ul>
