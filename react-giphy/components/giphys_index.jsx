@@ -6,6 +6,7 @@ import GiphysSearch from './giphys_search';
 class GiphysIndex extends React.Component {
   constructor(props) {
     super(props)
+    // this.state = {searchTerm: ""};
 
     this.loadMoreGiphys = this.loadMoreGiphys.bind(this);
   }
@@ -29,11 +30,6 @@ class GiphysIndex extends React.Component {
   }
 
   render() {
-    // console.log("props coming in");
-    // console.log(this.props);
-    // return (
-    //   <div>Loaded</div>
-    // )
     if (this.props.giphys.length === 0 ) {
       return (
         <div className="main">

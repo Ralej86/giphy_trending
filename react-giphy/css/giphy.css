@@ -12,6 +12,10 @@ ul {
   display: inline;
   padding-right: 10px;
 }
+/* 
+.giphy-li:hover {
+  transform: scale(1.04);
+} */
 
 img {
   border-radius: 5px;

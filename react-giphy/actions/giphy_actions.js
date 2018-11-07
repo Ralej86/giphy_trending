@@ -17,8 +17,8 @@ export const receiveTrendingGiphys = giphys => {
   }
 }
 
-export const fetchSearchGiphys = (searchTerm) => dispatch => {
-  return APIUtil.fetchSearchGiphys(searchTerm)
+export const fetchSearchGiphys = (searchTerm, offset) => dispatch => {
+  return APIUtil.fetchSearchGiphys(searchTerm, offset)
     .then(giphys => dispatch(receiveSearchGiphys(giphys.data)))
 };
 
